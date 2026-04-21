@@ -1,0 +1,11 @@
+{
+    "manifest_version":3,
+    "author":"Chirag",
+    "name":"AI-Impulse-Guard",
+    "version":"1.0.0",
+    "description":"Control impulse buying using AI",
+    "action":{
+         "default_popup": "popup.html",
+        "default_title": "Impulse Guard"
+    }
+}

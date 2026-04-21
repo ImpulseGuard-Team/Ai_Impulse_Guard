@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  background: #0b1326;
+}
+
+/* Overlay */
+.overlay {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Popup Container */
+.popup {
+  width: 400px;
+  background: #1c2333;
+  border-radius: 24px;
+  padding: 24px;
+  color: #e2e8f0;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  text-align: center;
+}
+
+/* Icon */
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+/* Heading */
+.popup h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+/* Info Cards */
+.info-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.card {
+  flex: 1;
+  background: #111827;
+  padding: 12px;
+  border-radius: 12px;
+  text-align: left;
+}
+
+.label {
+  font-size: 10px;
+  color: #64748b;
+}
+
+.card h3 {
+  font-size: 18px;
+}
+
+.card span {
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.card ul {
+  font-size: 12px;
+  padding-left: 16px;
+}
+
+/* Insight Box */
+.insight {
+  background: #0f172a;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  margin-bottom: 20px;
+  color: #93c5fd;
+}
+
+/* Buttons */
+.primary-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #34d399, #22c55e);
+  color: #022c22;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #334155;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #cbd5f5;
+  cursor: pointer;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+}
+
+/* Footer */
+.footer {
+  margin-top: 12px;
+  font-size: 10px;
+  color: #64748b;
+}
