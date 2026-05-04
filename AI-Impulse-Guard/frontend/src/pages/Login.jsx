@@ -91,12 +91,10 @@ function LoginPage(){
             />
           </div>
 
-          {/* BUTTON */}
           <button className="w-full h-12 rounded-full mt-4 bg-gradient-to-r from-[#C0C1FF] to-[#4B4DD8] hover:brightness-110 shadow-[0_0_30px_rgba(75,77,216,0.6)] transition">
                   Sign In →
             </button>
 
-          {/* FOOTER */}
           <p className="text-center text-sm text-gray-400 mt-6">
             Don’t have an account? <span className="text-[#4FD1C5] cursor-pointer">Create Account</span>
           </p>
