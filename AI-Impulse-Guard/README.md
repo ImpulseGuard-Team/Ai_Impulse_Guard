@@ -3,58 +3,123 @@ This project is a Node.js and Express-based web application designed to manage u
 
 The system ensures access control by restricting sensitive pages to logged-in users only, improving security and user flow. Dynamic rendering is used to pass user-specific data (such as profile or transaction details) to views, enabling a personalized interface. Overall, the project demonstrates backend routing, authentication logic, and integration of multiple user-focused modules within a structured Express application.
 
-module.exports = router;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulse Guard - Stop Impulse Buying with AI</title>
+    <meta name="description" content="Impulse Guard monitors your spending and helps you control emotional purchases with AI-driven insights.">
+    <link rel="stylesheet" href="/css/landing.css">
+</head>
+<body>
 
-const express        = require('express');
-const router         = express.Router();
-const authController = require('../controllers/authController');
+    <!-- ── HEADER ──────────────────────────────────────────────── -->
+    <header class="site-header">
+        <span class="header-brand">Impulse Guard</span>
 
-// Home page
-router.get('/', (req, res) => {
-    res.render('index');
-});
+        <nav class="header-nav">
+            <a href="#features" class="active">Features</a>
+            <a href="/dashboard">Dashboard</a>
+            <a href="/insight">Insights</a>
+        </nav>
 
-// Login page
-router.get('/login', (req, res) => {
-    if (authController.isLoggedIn()) {
-        return res.redirect('/dashboard');
-    }
-    res.render('login', { error: null });
-});
+        <button class="btn-get-started" onclick="window.location.href='/login'">
+            Get Started
+        </button>
+    </header>
 
-// Register page
-router.get('/register', (req, res) => {
-    if (authController.isLoggedIn()) {
-        return res.redirect('/dashboard');
-    }
-    res.render('register', { error: null });
-});
+    <!-- ── MAIN CONTENT ──────────────────────────────────────────── -->
+    <main>
 
-// Dashboard - Fetch user from memory/DB
-router.get('/dashboard', (req, res) => {
-    if (!authController.isLoggedIn()) return res.redirect('/login');
-    const user = authController.getCurrentUser();
-    res.render('dashboard', { user });
-});
+        <!-- HERO -->
+        <section class="hero">
 
-// Insights
-router.get('/insight', (req, res) => {
-    if (!authController.isLoggedIn()) return res.redirect('/login');
-    res.render('insight');
-});
+            <div class="badge">
+                <span class="badge-dot"></span>
+                <span class="badge-text">AI-Powered Defense v2.4</span>
+            </div>
 
-// Transactions
-router.get('/transactions', (req, res) => {
-    if (!authController.isLoggedIn()) return res.redirect('/login');
-    const user = authController.getCurrentUser();
-    res.render('transactions', { user });
-});
+            <h1>Stop Impulse<br>Buying with AI.</h1>
 
-// AI Advisor
-router.get('/ai-advisor', (req, res) => {
-    if (!authController.isLoggedIn()) return res.redirect('/login');
-    const user = authController.getCurrentUser();
-    res.render('ai-advisor', { user });
-});
+            <p class="hero-sub">
+                Protect your wealth with an ethereal guardian. Impulse Guard
+                monitors your digital footprint to intercept emotional spending
+                before it happens.
+            </p>
+
+            <div class="hero-actions">
+                <button class="btn-hero-primary" onclick="window.location.href='/login'">
+                    Get Started
+                </button>
+                <button class="btn-hero-outline" onclick="window.location.href='/login'">
+                    Try Demo
+                </button>
+            </div>
+
+            <div class="hero-preview">
+                Dashboard Preview — Log in to see your spending analytics
+            </div>
+
+        </section>
+
+        <!-- FEATURES -->
+        <section class="features" id="features">
+
+            <h2>The Guardian Ecosystem</h2>
+            <p class="features-sub">
+                Intelligent protection layers built for the modern consumer.
+            </p>
+
+            <div class="features-grid">
+
+                <article class="feature-card">
+                    <h3>Spending analysis</h3>
+                    <p>
+                        Deep-dive into the 'why' behind your purchases.
+                        Uncover emotional triggers and seasonal patterns.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Predictive guardrails</h3>
+                    <p>
+                        AI forecasts risk windows and places friction before
+                        checkout. Always on, always learning.
+                    </p>
+                </article>
+
+                <article class="feature-card">
+                    <h3>Guardian AI</h3>
+                    <p>
+                        A calm, private co-pilot that nudges you back to your
+                        goals. Less guilt, more control.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section">
+            <div class="cta-box">
+                <h2>Ready to take control of<br>your financial destiny?</h2>
+                <div class="cta-actions">
+                    <button class="btn-cta-primary" onclick="window.location.href='/login'">
+                        Get Started
+                    </button>
+                    <button class="btn-cta-outline" onclick="window.location.href='/login'">
+                        Talk to an Advisor
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
+
 
 module.exports = router;
